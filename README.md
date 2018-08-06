@@ -5,6 +5,6 @@ Magento 2 add custom rest api endpoints
 {base_url}/rest/default/mma/categories
 
 ## Install
-composer require mma/customapi
-php bin/magento setup:upgrade
+composer require mma/customapi<br>
+php bin/magento setup:upgrade<br>
 php bin/magento cache:clean
