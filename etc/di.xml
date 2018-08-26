@@ -2,4 +2,5 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="MMA\CustomApi\Api\CategoryManagementInterface" type="MMA\CustomApi\Model\CategoryManagement"></preference>
+    <preference for="MMA\CustomApi\Api\BraintreeConfigProviderInterface" type="MMA\CustomApi\Model\Braintree\Ui\ConfigProvider"></preference>
 </config>
