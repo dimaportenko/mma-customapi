@@ -11,3 +11,6 @@ Magento 2 add custom rest api endpoints
 composer require mma/customapi<br>
 php bin/magento setup:upgrade<br>
 php bin/magento cache:clean
+
+### Compatibility
+Tested on Magento Commerce 2.1.7
