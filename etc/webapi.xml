@@ -13,4 +13,24 @@
             <resource ref="Magento_Backend::admin" />
         </resources>
     </route>
+
+    <route url="/mma/me/vault/items" method="GET">
+        <service class="MMA\CustomApi\Model\PaymentTokenManagement" method="getListByCustomerId"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+
+    <route url="/mma/me/vault/nonce" method="GET">
+        <service class="MMA\CustomApi\Api\PaymentTokenManagementInterface" method="getPaymentNonce"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
 </routes>
