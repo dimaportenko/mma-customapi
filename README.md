@@ -2,16 +2,16 @@
 Magento 2 add custom rest api endpoints
 
 ##### Cagegory tree with image attribute 
-{base_url}/rest/default/mma/categories
+{base_url}/rest/default/V1/mma/categories
 
 ##### Get Braintree client token
-{base_url}/rest/default/mma/braintree/token
+{base_url}/rest/default/V1/mma/braintree/token
 
 ##### Get Vault for client
-{base_url}/rest/default/mma/me/vault/items
+{base_url}/rest/default/V1/mma/me/vault/items
 
 ##### Get nonce for braintree vault 
-{base_url}/rest/default/mma/me/vault/nonce
+{base_url}/rest/default/V1/mma/me/vault/nonce
 
 ### Install
 composer require mma/customapi<br>

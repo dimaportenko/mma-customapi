@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
-    <route url="/mma/categories" method="GET">
+    <route url="/V1/mma/categories" method="GET">
         <service class="MMA\CustomApi\Api\CategoryManagementInterface" method="getTree" />
         <resources>
             <resource ref="Magento_Catalog::categories" />
         </resources>
     </route>
 
-    <route url="/mma/braintree/token" method="GET">
+    <route url="/V1/mma/braintree/token" method="GET">
         <service class="MMA\CustomApi\Api\BraintreeConfigProviderInterface" method="getClientToken" />
         <resources>
             <resource ref="Magento_Backend::admin" />
         </resources>
     </route>
 
-    <route url="/mma/me/vault/items" method="GET">
+    <route url="/V1/mma/me/vault/items" method="GET">
         <service class="MMA\CustomApi\Model\PaymentTokenManagement" method="getListByCustomerId"/>
         <resources>
             <resource ref="self" />
@@ -24,7 +24,7 @@
         </data>
     </route>
 
-    <route url="/mma/me/vault/nonce" method="GET">
+    <route url="/V1/mma/me/vault/nonce" method="GET">
         <service class="MMA\CustomApi\Api\PaymentTokenManagementInterface" method="getPaymentNonce"/>
         <resources>
             <resource ref="self" />
