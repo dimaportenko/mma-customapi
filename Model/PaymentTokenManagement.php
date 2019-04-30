@@ -22,7 +22,7 @@ use Magento\Braintree\Model\Adapter\BraintreeAdapterFactory;
 use Magento\Braintree\Gateway\Validator\PaymentNonceResponseValidator;
 use Magento\Payment\Gateway\Command\Result\ArrayResultFactory;
 
-class PaymentTokenManagement extends \Magento\Vault\Model\PaymentTokenManagement implements \Cor\Rest\Api\PaymentTokenManagementInterface
+class PaymentTokenManagement extends \Magento\Vault\Model\PaymentTokenManagement implements \MMA\CustomApi\Api\PaymentTokenManagementInterface
 {
     /**
      * @var \Magento\Vault\Api\PaymentTokenManagementInterface
