@@ -33,4 +33,12 @@
             <parameter name="customerId" force="true">%customer_id%</parameter>
         </data>
     </route>
+
+    <route url="/V1/mma/magento/version" method="GET">
+        <service class="MMA\CustomApi\Api\VersionInterface" method="getVersion" />
+        <resources>
+            <resource ref="Magento_Backend::admin" />
+        </resources>
+    </route>
+
 </routes>

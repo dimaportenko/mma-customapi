@@ -13,6 +13,9 @@ Magento 2 add custom rest api endpoints
 ##### Get nonce for braintree vault 
 {base_url}/rest/default/V1/mma/me/vault/nonce
 
+##### Get Magento version 
+{base_url}/rest/default/V1/mma/magento/version
+
 ### Install
 composer require mma/customapi<br>
 php bin/magento setup:upgrade<br>
