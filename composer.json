@@ -16,13 +16,5 @@
         "psr-4": {
             "MMA\\CustomApi\\": ""
         }
-    },
-    "extra": {
-        "map": [
-            [
-                "*",
-                "MMA/CustomApi"
-            ]
-        ]
     }
 }
