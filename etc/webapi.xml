@@ -48,4 +48,11 @@
         </resources>
     </route>
 
+    <route url="/V1/mma/products/best-seller/:limit" method="GET">
+        <service class="MMA\CustomApi\Api\BestSellerRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+
 </routes>

@@ -2,46 +2,9 @@
 
 namespace MMA\CustomApi\Model;
 
-class MostViewedRepository {
+use MMA\CustomApi\Api\MostViewedRepositoryInterface;
 
-    /**
-     * @var \Magento\Reports\Model\ResourceModel\Product\CollectionFactory
-     */
-    protected $productsFactory;
-
-    /**
-     * @var \Magento\Store\Model\StoreManagerInterface
-     */
-    protected $storeManager;
-
-    /**
-     * @var \Magento\Catalog\Api\ProductRepositoryInterface
-     */
-    protected $productRepository;
-
-    /**
-     * @var \Magento\Catalog\Api\Data\ProductSearchResultsInterfaceFactory $searchResultsFactory
-     */
-    protected $searchResultsFactory;
-
-
-    /**
-     * @param \Magento\Reports\Model\ResourceModel\Product\CollectionFactory $productsFactory
-     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     * @param \Magento\Catalog\Api\ProductRepositoryInterface $productRepository
-     * @param \Magento\Catalog\Api\Data\ProductSearchResultsInterfaceFactory $searchResultsFactory
-     */
-    public function __construct(
-        \Magento\Reports\Model\ResourceModel\Product\CollectionFactory $productsFactory,
-        \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
-        \Magento\Catalog\Api\Data\ProductSearchResultsInterfaceFactory $searchResultsFactory
-    ) {
-        $this->productsFactory = $productsFactory;
-        $this->storeManager = $storeManager;
-        $this->productRepository = $productRepository;
-        $this->searchResultsFactory  = $searchResultsFactory;
-    }
+class MostViewedRepository extends ProductRepository implements MostViewedRepositoryInterface {
 
     /**
      * @inheritDoc
