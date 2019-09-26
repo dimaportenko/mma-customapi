@@ -5,5 +5,5 @@
     <preference for="MMA\CustomApi\Api\BraintreeConfigProviderInterface" type="MMA\CustomApi\Model\Braintree\Ui\ConfigProvider"></preference>
     <preference for="MMA\CustomApi\Api\PaymentTokenManagementInterface" type="MMA\CustomApi\Model\PaymentTokenManagement"></preference>
     <preference for="MMA\CustomApi\Api\VersionInterface" type="MMA\CustomApi\Model\Version"></preference>
-
+    <preference for="MMA\CustomApi\Api\MostViewedRepositoryInterface" type="MMA\CustomApi\Model\MostViewedRepository"></preference>
 </config>

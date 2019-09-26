@@ -16,6 +16,9 @@ Magento 2 add custom rest api endpoints
 ##### Get Magento version 
 {base_url}/rest/default/V1/mma/magento/version
 
+##### Get Magento most viewed products 
+{base_url}/rest/default/V1/mma/products/most-viewed/:limit
+
 ### Install
 composer require mma/customapi<br>
 php bin/magento setup:upgrade<br>

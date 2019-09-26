@@ -41,4 +41,11 @@
         </resources>
     </route>
 
+    <route url="/V1/mma/products/most-viewed/:limit" method="GET">
+        <service class="MMA\CustomApi\Api\MostViewedRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+
 </routes>

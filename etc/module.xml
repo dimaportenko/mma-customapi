@@ -4,7 +4,6 @@
     <module name="MMA_CustomApi" setup_version="0.1.0">
         <sequence>
             <module name="Magento_Catalog"/>
-
         </sequence>
     </module>
 </config>
