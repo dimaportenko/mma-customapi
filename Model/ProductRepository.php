@@ -25,9 +25,9 @@ class ProductRepository {
     protected $searchResultsFactory;
 
     /**
-     * @var \Magento\Catalog\Model\Config $searchResultsFactory
+     * @var \Magento\Framework\Stdlib\DateTime\TimezoneInterface
      */
-    protected $catalogConfig;
+    protected $localeDate;
 
 
     /**
@@ -41,13 +41,13 @@ class ProductRepository {
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
         \Magento\Catalog\Api\Data\ProductSearchResultsInterfaceFactory $searchResultsFactory,
-        \Magento\Catalog\Model\Config $catalogConfig
+        \Magento\Framework\Stdlib\DateTime\TimezoneInterface $localeDate
     ) {
         $this->productsFactory = $productsFactory;
         $this->storeManager = $storeManager;
         $this->productRepository = $productRepository;
         $this->searchResultsFactory  = $searchResultsFactory;
-        $this->catalogConfig = $catalogConfig;
+        $this->localeDate = $localeDate;
     }
 
     public function getProductCollection() {

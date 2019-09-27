@@ -12,7 +12,6 @@ class BestSellerRepository extends ProductRepository implements BestSellerReposi
     public function getList($limit = 10)
     {
         $collection = $this->getProductCollection();
-//        $collection = $this->productsFactory->create();
         $connection = $collection->getConnection();
         $orderTableAliasName = $connection->quoteIdentifier('order');
         $orderJoinCondition = [

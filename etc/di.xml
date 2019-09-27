@@ -7,4 +7,6 @@
     <preference for="MMA\CustomApi\Api\VersionInterface" type="MMA\CustomApi\Model\Version"></preference>
     <preference for="MMA\CustomApi\Api\MostViewedRepositoryInterface" type="MMA\CustomApi\Model\MostViewedRepository"></preference>
     <preference for="MMA\CustomApi\Api\BestSellerRepositoryInterface" type="MMA\CustomApi\Model\BestSellerRepository"></preference>
+    <preference for="MMA\CustomApi\Api\TopRatedRepositoryInterface" type="MMA\CustomApi\Model\TopRatedRepository"></preference>
+    <preference for="MMA\CustomApi\Api\NewProductsRepositoryInterface" type="MMA\CustomApi\Model\NewProductsRepository"></preference>
 </config>

@@ -55,4 +55,18 @@
         </resources>
     </route>
 
+    <route url="/V1/mma/products/top-rated/:limit" method="GET">
+        <service class="MMA\CustomApi\Api\TopRatedRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+
+    <route url="/V1/mma/products/new/:limit" method="GET">
+        <service class="MMA\CustomApi\Api\NewProductsRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+
 </routes>
