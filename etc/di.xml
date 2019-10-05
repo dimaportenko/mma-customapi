@@ -9,4 +9,6 @@
     <preference for="MMA\CustomApi\Api\BestSellerRepositoryInterface" type="MMA\CustomApi\Model\BestSellerRepository"></preference>
     <preference for="MMA\CustomApi\Api\TopRatedRepositoryInterface" type="MMA\CustomApi\Model\TopRatedRepository"></preference>
     <preference for="MMA\CustomApi\Api\NewProductsRepositoryInterface" type="MMA\CustomApi\Model\NewProductsRepository"></preference>
+    <preference for="MMA\CustomApi\Api\Data\RatingInterface" type="MMA\CustomApi\Model\Review\RatingData"></preference>
+    <preference for="MMA\CustomApi\Api\ReviewInterface" type="MMA\CustomApi\Model\Review\ReviewManagement"></preference>
 </config>
