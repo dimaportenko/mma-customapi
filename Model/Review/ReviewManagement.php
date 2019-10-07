@@ -96,18 +96,18 @@ class ReviewManagement implements ReviewInterface
     private $_deleteCache = [];
 
     /**
-     * @param \Magento\Catalog\Block\Product\Context $context
-     *
+     * @var \Magento\Store\Model\StoreManagerInterface
      */
+    protected $_storeManager;
+
+
     public function __construct(
-        \Magento\Catalog\Block\Product\Context $context,
         \Magento\Framework\Stdlib\DateTime\DateTime $date,
         \Magento\Review\Model\RatingFactory $ratingFactory,
         \Magento\Review\Model\ReviewFactory $reviewFactory,
         \Magento\Review\Model\ResourceModel\Review\CollectionFactory $collectionFactory,
         \Magento\Review\Model\Rating\Option $ratingOptions,
-        $connectionName = null
-
+        \Magento\Store\Model\StoreManagerInterface $storeManager
     ) {
 
         $this->_date = $date;
@@ -115,6 +115,7 @@ class ReviewManagement implements ReviewInterface
         $this->_ratingFactory = $ratingFactory;
         $this->_reviewFactory = $reviewFactory;
         $this->_ratingOptions = $ratingOptions;
+        $this->_storeManager = $storeManager;
     }
 
     /**
@@ -212,9 +213,9 @@ class ReviewManagement implements ReviewInterface
         $title,
         $detail,
         $ratingData,
-        $customer_id = null,
-        $storeId
+        $customer_id = null
     ) {
+        $storeId = $this->_storeManager->getStore()->getId();
 
         $data = [
             "nickname" => $nickname,

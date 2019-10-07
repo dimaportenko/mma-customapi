@@ -40,7 +40,6 @@ interface ReviewInterface
         $title,
         $detail,
         $ratingData,
-        $customer_id = null,
-        $storeId
+        $customer_id = null
     );
 }
