@@ -84,7 +84,7 @@
     <route url="/V1/mma/review/mine/post" method="POST">
         <service class="MMA\CustomApi\Api\ReviewInterface" method="writeReviews"/>
         <resources>
-            <resource ref="Magento_Review::reviews_all" />
+            <resource ref="self" />
         </resources>
         <data>
             <parameter name="customer_id" force="true">%customer_id%</parameter>
