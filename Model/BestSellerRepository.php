@@ -42,6 +42,9 @@ class BestSellerRepository extends ProductRepository implements BestSellerReposi
                 0
             );
 
+        $collection->load();
+        $collection->addCategoryIds();
+
         // TODO: add cache here for products as in ProductRepository
 
         $searchResults = $this->searchResultsFactory->create();

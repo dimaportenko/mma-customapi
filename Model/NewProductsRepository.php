@@ -47,6 +47,8 @@ class NewProductsRepository extends ProductRepository implements NewProductsRepo
             1
         );
 
+        $collection->load();
+        $collection->addCategoryIds();
         // TODO: add cache here for products as in ProductRepository
 
         $searchResults = $this->searchResultsFactory->create();
