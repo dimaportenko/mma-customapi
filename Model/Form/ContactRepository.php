@@ -10,7 +10,7 @@ use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\DataObject;
 use Magento\Framework\Exception\LocalizedException;
 use MMA\CustomApi\Api\ContactRepositoryInterface;
-use MMA\CustomApi\Model\Data\ResponseModel;
+use MMA\CustomApi\Api\Data\ResponseInterface;
 
 class ContactRepository implements ContactRepositoryInterface {
 
@@ -35,17 +35,25 @@ class ContactRepository implements ContactRepositoryInterface {
     private $logger;
 
     /**
+     * @var ResponseInterface
+     */
+    private $response;
+
+    /**
      * @param Context $context
      * @param MailInterface $mail
      * @param DataPersistorInterface $dataPersistor
      * @param LoggerInterface $logger
+     * @param ResponseInterface $response
      */
     public function __construct(
         Context $context,
         MailInterface $mail,
         DataPersistorInterface $dataPersistor,
-        LoggerInterface $logger = null
+        LoggerInterface $logger = null,
+        ResponseInterface $response
     ) {
+        $this->response = $response;
         $this->context = $context;
         $this->mail = $mail;
         $this->dataPersistor = $dataPersistor;
@@ -96,21 +104,15 @@ class ContactRepository implements ContactRepositoryInterface {
                 'comment' => $comment,
                 'telephone' => $phone,
             ]);
-            $response = [
-                'message' => 'Thanks for contacting us with your comments and questions. We\'ll respond to you very soon.',
-                'status' => true
-            ];
+            $this->response->setMessage('Thanks for contacting us with your comments and questions. We\'ll respond to you very soon.');
+            $this->response->setStatus(true);
         } catch (LocalizedException $e) {
-            $response = [
-                'message' => $e->getMessage(),
-                'status' => false
-            ];
+            $this->response->setMessage($e->getMessage());
+            $this->response->setStatus(false);
         } catch (\Exception $e) {
-            $response = [
-                'message' => 'An error occurred while processing your form. Please try again later.',
-                'status' => false
-            ];
+            $this->response->setMessage('An error occurred while processing your form. Please try again later.');
+            $this->response->setStatus(false);
         }
-        return $response;
+        return $this->response;
     }
 }
