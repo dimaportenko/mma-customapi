@@ -75,12 +75,14 @@
             <resource ref="Magento_Review::reviews_all" />
         </resources>
     </route>
+
     <route url="/V1/mma/rating/ratings/:store_id" method="GET">
         <service class="MMA\CustomApi\Api\ReviewInterface" method="getRatings"/>
         <resources>
             <resource ref="Magento_Review::ratings" />
         </resources>
     </route>
+
     <route url="/V1/mma/review/mine/post" method="POST">
         <service class="MMA\CustomApi\Api\ReviewInterface" method="writeReviews"/>
         <resources>
@@ -90,10 +92,20 @@
             <parameter name="customer_id" force="true">%customer_id%</parameter>
         </data>
     </route>
+
     <route url="/V1/mma/review/guest/post" method="POST">
         <service class="MMA\CustomApi\Api\ReviewInterface" method="writeReviews"/>
         <resources>
             <resource ref="Magento_Review::reviews_all" />
         </resources>
     </route>
+
+    <route url="/V1/mma/contact/post" method="POST">
+        <service class="MMA\CustomApi\Api\ContactRepositoryInterface" method="contact"/>
+        <resources>
+            <resource ref="Magento_Backend::admin" />
+        </resources>
+    </route>
+
+
 </routes>

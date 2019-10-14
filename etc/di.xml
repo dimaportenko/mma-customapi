@@ -11,4 +11,5 @@
     <preference for="MMA\CustomApi\Api\NewProductsRepositoryInterface" type="MMA\CustomApi\Model\NewProductsRepository"></preference>
     <preference for="MMA\CustomApi\Api\Data\RatingInterface" type="MMA\CustomApi\Model\Review\RatingData"></preference>
     <preference for="MMA\CustomApi\Api\ReviewInterface" type="MMA\CustomApi\Model\Review\ReviewManagement"></preference>
+    <preference for="MMA\CustomApi\Api\ContactRepositoryInterface" type="MMA\CustomApi\Model\Form\ContactRepository"></preference>
 </config>
