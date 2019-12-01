@@ -13,4 +13,6 @@
     <preference for="MMA\CustomApi\Api\ReviewInterface" type="MMA\CustomApi\Model\Review\ReviewManagement"></preference>
     <preference for="MMA\CustomApi\Api\Data\ResponseInterface" type="MMA\CustomApi\Model\Data\ResponseModel"></preference>
     <preference for="MMA\CustomApi\Api\ContactRepositoryInterface" type="MMA\CustomApi\Model\Form\ContactRepository"></preference>
+    <preference for="MMA\CustomApi\Api\PayPal\Transparent\SecurityTokenInterface" type="MMA\CustomApi\Model\PayPal\Transparent\SecureToken"></preference>
+    <preference for="MMA\CustomApi\Api\PayPal\Transparent\SecurityTokenManagerInterface" type="MMA\CustomApi\Model\PayPal\Transparent\SecureTokenManager"></preference>
 </config>

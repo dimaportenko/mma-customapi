@@ -107,5 +107,11 @@
         </resources>
     </route>
 
+    <route url="/V1/mma/paypal/transparent/securityToken/:quote_id" method="GET">
+        <service class="MMA\CustomApi\Api\PayPal\Transparent\SecurityTokenManagerInterface" method="getSecurityToken"/>
+        <resources>
+            <resource ref="Magento_Backend::admin" />
+        </resources>
+    </route>
 
 </routes>
