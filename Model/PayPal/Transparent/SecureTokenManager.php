@@ -9,7 +9,9 @@ use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Framework\Session\Generic;
 use Magento\Quote\Api\CartRepositoryInterface;
-use Magento\Paypal\Model\Payflow\Service\Request\SecureToken;
+use MMA\CustomApi\Model\PayPal\Payflow\Service\Request\SecureToken;
+//app/code/MMA/CustomApi/Model/PayPal/Payflow/Service/Request/SecureToken.php
+//use Magento\Paypal\Model\Payflow\Service\Request\SecureToken;
 use Magento\Paypal\Model\Payflow\Transparent;
 use Magento\Quote\Model\Quote;
 
