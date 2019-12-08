@@ -15,7 +15,7 @@ use MMA\CustomApi\Model\PayPal\Payflow\Service\Request\SecureToken;
 use Magento\Paypal\Model\Payflow\Transparent;
 use Magento\Quote\Model\Quote;
 
-use MMA\CustomApi\Api\PayPal\Transparent\SecurityTokenInterface;
+use MMA\CustomApi\Api\PayPal\Transparent\SecurityTokenInterfaceFactory;
 use MMA\CustomApi\Api\PayPal\Transparent\SecurityTokenManagerInterface;
 
 /**
@@ -57,20 +57,22 @@ class SecureTokenManager implements SecurityTokenManagerInterface
      * @param SecureToken $secureTokenService
      * @param CartRepositoryInterface $quoteRepository
      * @param Transparent $transparent
-     * @param SecurityTokenInterface $response
+     * @param SecurityTokenInterfaceFactory $responseFactory
      */
     public function __construct(
         JsonFactory $resultJsonFactory,
         Generic $sessionTransparent,
         SecureToken $secureTokenService,
         CartRepositoryInterface $quoteRepository,
-        Transparent $transparent
+        Transparent $transparent,
+        SecurityTokenInterfaceFactory $responseFactory
     ) {
         $this->resultJsonFactory = $resultJsonFactory;
         $this->sessionTransparent = $sessionTransparent;
         $this->secureTokenService = $secureTokenService;
         $this->quoteRepository = $quoteRepository;
         $this->transparent = $transparent;
+        $this->responseFactory = $responseFactory;
     }
 
     /**
@@ -92,7 +94,12 @@ class SecureTokenManager implements SecurityTokenManagerInterface
                 throw new \LogicException();
             }
 
-            return $token;
+            return $this->responseFactory->create()
+                ->setResult($token->getResult())
+                ->setSecuretoken($token->getSecuretoken())
+                ->setSecuretokenid($token->getSecuretokenid())
+                ->setResultCode($token->getResultCode())
+                ->setRespmsg($token->getRespmsg());
         } catch (\Exception $e) {
             return $this->getErrorResponse();
         }
