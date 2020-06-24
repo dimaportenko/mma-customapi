@@ -13,6 +13,9 @@ Magento 2 add custom rest api endpoints
 ##### Get nonce for braintree vault 
 {base_url}/rest/default/V1/mma/me/vault/nonce
 
+##### Get paypal security token for quote
+{base_url}/rest/default/V1/mma/paypal/transparent/securityToken/:quote_id
+
 ##### Get Magento version 
 {base_url}/rest/default/V1/mma/magento/version
 
@@ -27,6 +30,22 @@ Magento 2 add custom rest api endpoints
 
 ##### Get Magento new products 
 {base_url}/rest/default/V1/mma/products/new/:limit
+
+##### Get product reviews
+{base_url}/rest/default/V1/mma/review/reviews/:productId
+
+##### Get product ratings
+{base_url}/rest/default/V1/mma/rating/ratings/:store_id
+
+##### Post product review from authorized customer
+{base_url}/rest/default/V1/mma/review/mine/post
+
+##### Post product review from guest customer
+{base_url}/rest/default/V1/mma/review/guest/post
+
+##### Post contact form
+{base_url}/rest/default/V1/mma/contact/post
+
 
 ### Install
 composer require mma/customapi<br>
