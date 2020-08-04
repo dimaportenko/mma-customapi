@@ -54,3 +54,6 @@ php bin/magento cache:clean
 
 ### Compatibility
 Tested on Magento Commerce 2.2.5
+
+### Learning    
+Check my videos about Magento 2 Rest API development basics https://www.youtube.com/playlist?list=PL97fL9DAn9Qy5kCQfPVrfh9pGNYeG0vmS
